@@ -53,7 +53,7 @@ if (mix.inProduction()) {
         },
     });
 } else {
-    mix.sourceMaps();
+    mix.sourceMaps(true, "cheap-module-source-map");
     mix.disableNotifications();
 }
 
