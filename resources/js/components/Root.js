@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import i18n from "@/locale/i18n";
+
 class Root extends React.Component {
     render() {
         console.log("Example");
         return (
             <div className="container">
+                <h1>{i18n.t("Welcome to React")}</h1>
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
