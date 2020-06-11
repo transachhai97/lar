@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import App from "@/components/App";
-import configureStore from "@/store/configureStore";
+import App from "@/views/components/App";
+import configureStore from "@/state/store/configureStore";
 
 const store = configureStore();
 

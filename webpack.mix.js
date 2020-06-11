@@ -14,7 +14,7 @@ const LiveReloadPlugin = require("webpack-livereload-plugin");
  */
 
 mix.webpackConfig((webpack) => {
-    console.log(webpack);
+    console.log(mix.inProduction() && webpack);
     return {
         plugins: [new LiveReloadPlugin()],
         resolve: {
