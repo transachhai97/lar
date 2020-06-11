@@ -15,8 +15,8 @@ const resources = {
 
 i18n.use(initReactI18next).init({
     resources: resources,
-    lng: "vn",
-    fallbackLng: "en",
+    lng: "vi",
+    fallbackLng: "vi",
 
     keySeparator: false,
 
