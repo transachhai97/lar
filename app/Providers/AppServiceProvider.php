@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->registerDebug();
     }
 
     /**
@@ -24,5 +25,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+    }
+
+    /**
+     * registerDebug
+     */
+    protected function registerDebug()
+    {
+        if (env('APP_ENV') == 'local' || request('dev') == 1) {
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+
+            config(['app.debug' => true]);
+        }
     }
 }
