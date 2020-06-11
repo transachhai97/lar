@@ -56,7 +56,6 @@
         "popper.js": "^1.16.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-intl": "^4.6.9",
         "sass": "^1.26.8",
         "sass-loader": "^8.0.2"
     }
