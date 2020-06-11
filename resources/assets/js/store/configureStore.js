@@ -9,7 +9,7 @@ import { logger, crashReporter } from "@/store/middleware/logger";
 import history from "@/store/history";
 import rootReducer from "@/reducers";
 import rootSaga from "@/sagas";
-import isDevelopment from "@/env";
+import isDevelopment, { isReduxLogger } from "@/env";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,7 +20,7 @@ export default function configureStore(preloadedState) {
         sagaMiddleware,
     ];
 
-    if (isDevelopment) {
+    if (isReduxLogger) {
         middlewares.push(logger, crashReporter);
     }
 
