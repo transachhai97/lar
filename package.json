@@ -8,9 +8,9 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "yarn production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "format": "prettier --list-different --write \"resources/**/*.{js,jsx,css,scss}\"",
-        "eslint": "eslint \"resources/**/*.{js,jsx}\" --fix --quiet",
-        "stylelint": "stylelint \"resources/**/*.{css,scss}\" --fix",
+        "format": "prettier --list-different --write \"resources/assets/**/*.{js,jsx,css,scss}\"",
+        "eslint": "eslint \"resources/assets/**/*.{js,jsx}\" --fix --quiet",
+        "stylelint": "stylelint \"resources/assets/**/*.{css,scss}\" --fix",
         "clean": "yarn format && yarn eslint && yarn stylelint"
     },
     "devDependencies": {

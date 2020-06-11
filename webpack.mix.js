@@ -20,7 +20,7 @@ mix.webpackConfig((webpack) => {
         resolve: {
             extensions: [".js", ".jsx"],
             alias: {
-                "@": path.resolve(__dirname, "resources/js/"),
+                "@": path.resolve(__dirname, "resources/assets/js/"),
             },
         },
         module: {
@@ -61,9 +61,9 @@ if (mix.inProduction()) {
     mix.disableNotifications();
 }
 
-mix.react("resources/js/app.js", "public/js").sass(
-    "resources/sass/app.scss",
-    "public/css"
+mix.react("resources/assets/js/app.js", "public/assets/js").sass(
+    "resources/assets/sass/app.scss",
+    "public/assets/css"
 );
 
 mix.extract();

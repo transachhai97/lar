@@ -8,7 +8,9 @@ class Root extends React.Component {
         console.log("Example");
         return (
             <div className="container">
-                <h1>{i18n.t("Welcome to React")}</h1>
+                <h1 className="row justify-content-center">
+                    {i18n.t("Welcome to React")}
+                </h1>
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
