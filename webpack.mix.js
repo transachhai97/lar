@@ -13,32 +13,35 @@ const LiveReloadPlugin = require("webpack-livereload-plugin");
  |
  */
 
-mix.webpackConfig({
-    plugins: [new LiveReloadPlugin()],
-    resolve: {
-        extensions: [".js", ".jsx"],
-        alias: {
-            "@": path.resolve(__dirname, "resources/js/"),
+mix.webpackConfig((webpack) => {
+    console.log(webpack);
+    return {
+        plugins: [new LiveReloadPlugin()],
+        resolve: {
+            extensions: [".js", ".jsx"],
+            alias: {
+                "@": path.resolve(__dirname, "resources/js/"),
+            },
         },
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
+        module: {
+            rules: [
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: "babel-loader",
+                    },
                 },
-            },
-            {
-                enforce: "pre",
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                loader: "eslint-loader",
-                options: {},
-            },
-        ],
-    },
+                {
+                    enforce: "pre",
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    loader: "eslint-loader",
+                    options: {},
+                },
+            ],
+        },
+    };
 });
 
 if (mix.inProduction()) {
