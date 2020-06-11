@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+// eslint-disable-next-line no-unused-vars
+import { bindActionCreators, compose } from "redux";
 
 import i18n from "@/locale/i18n";
 
@@ -25,4 +28,16 @@ class App extends React.Component {
     }
 }
 
-export default App;
+// eslint-disable-next-line no-unused-vars
+const mapStateToProps = (state, ownProps) => {
+    return {};
+};
+
+// eslint-disable-next-line no-unused-vars
+const mapDispatchToProps = (dispatch) => {
+    return {};
+};
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(withConnect)(App);
