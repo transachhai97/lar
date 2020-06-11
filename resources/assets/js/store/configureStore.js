@@ -18,9 +18,12 @@ export default function configureStore(preloadedState) {
         thunkMiddleware,
         routerMiddleware(history),
         sagaMiddleware,
-        logger,
-        crashReporter,
     ];
+
+    if (isDevelopment) {
+        middlewares.push(logger, crashReporter);
+    }
+
     const middlewareEnhancer = applyMiddleware(...middlewares);
     const enhancers = [middlewareEnhancer, monitorReducersEnhancer];
     const composedEnhancers = isDevelopment

@@ -1,4 +1,8 @@
-// eslint-disable-next-line no-unused-vars
+import { createLogger } from "redux-logger";
+
+export const logger = createLogger({});
+
+/*// eslint-disable-next-line no-unused-vars
 export const logger = (store) => (next) => (action) => {
     // console.group(action.type);
     // console.info("dispatching", action);
@@ -6,7 +10,7 @@ export const logger = (store) => (next) => (action) => {
     // console.log("next state", store.getState());
     // console.groupEnd();
     return result;
-};
+};*/
 
 // eslint-disable-next-line no-unused-vars
 export const crashReporter = (store) => (next) => (action) => {
