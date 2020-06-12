@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 // eslint-disable-next-line no-unused-vars
 import { bindActionCreators, compose } from "redux";
+import { withTranslation } from "react-i18next";
 
 import i18n from "@/locale/i18n";
 
@@ -40,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default compose(withConnect)(App);
+export default compose(withTranslation(), withConnect)(App);
