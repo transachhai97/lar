@@ -1,9 +1,12 @@
 import uiType from "@/state/ducks/ui/type";
 
-export const showLoading = () => ({
-    type: uiType.SHOW_LOADING,
-});
+const uiAction = {
+    showLoading: () => ({
+        type: uiType.SHOW_LOADING,
+    }),
+    hideLoading: () => ({
+        type: uiType.HIDE_LOADING,
+    }),
+};
 
-export const hideLoading = () => ({
-    type: uiType.HIDE_LOADING,
-});
+export default uiAction;
