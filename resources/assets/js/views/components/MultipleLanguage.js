@@ -35,8 +35,10 @@ class MultipleLanguage extends React.Component {
 
     render() {
         return (
-            <div className="row justify-content-center">
-                {this._renderSelect()}
+            <div className="container">
+                <div className="row justify-content-center">
+                    {this._renderSelect()}
+                </div>
             </div>
         );
     }
