@@ -11,7 +11,9 @@ class MultipleLanguage extends React.Component {
     }
 
     changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
+        if (lng !== i18n.language) {
+            i18n.changeLanguage(lng);
+        }
     };
 
     _renderSelect = () => {
