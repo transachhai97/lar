@@ -55,6 +55,11 @@ if (mix.inProduction()) {
             },
             extractComments: false,
         },
+        cssNano: {
+            discardComments: {
+                removeAll: true,
+            },
+        },
     });
 } else {
     mix.sourceMaps(true, "cheap-module-source-map");
@@ -63,7 +68,12 @@ if (mix.inProduction()) {
 
 mix.react("resources/assets/js/app.js", "public/assets/js").sass(
     "resources/assets/sass/app.scss",
-    "public/assets/css"
+    "public/assets/css",
+    {
+        sassOptions: {
+            outputStyle: mix.inProduction() ? "compressed" : "expanded",
+        },
+    }
 );
 
 mix.extract();
