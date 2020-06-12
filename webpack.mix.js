@@ -13,8 +13,10 @@ const LiveReloadPlugin = require("webpack-livereload-plugin");
  |
  */
 
+const isProduction = mix.inProduction();
+
 mix.webpackConfig((webpack) => {
-    console.log(mix.inProduction() && webpack);
+    console.log(isProduction && webpack);
     return {
         plugins: [new LiveReloadPlugin()],
         resolve: {
@@ -44,7 +46,7 @@ mix.webpackConfig((webpack) => {
     };
 });
 
-if (mix.inProduction()) {
+if (isProduction) {
     mix.version();
     mix.options({
         terser: {
@@ -71,7 +73,7 @@ mix.react("resources/assets/js/app.js", "public/assets/js").sass(
     "public/assets/css",
     {
         sassOptions: {
-            outputStyle: mix.inProduction() ? "compressed" : "expanded",
+            outputStyle: isProduction ? "compressed" : "expanded",
         },
     }
 );

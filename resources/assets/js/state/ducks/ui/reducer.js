@@ -1,7 +1,7 @@
 import uiType from "@/state/ducks/ui/type";
 
 const initialState = {
-    isLoading: true,
+    isLoading: false,
 };
 
 const uiReducer = (state = initialState, action) => {
