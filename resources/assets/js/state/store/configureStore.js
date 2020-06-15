@@ -4,12 +4,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { routerMiddleware } from "connected-react-router";
 import createSagaMiddleware from "redux-saga";
 
-import monitorReducersEnhancer from "@/store/enhancers/monitorReducerEnhancer";
-import { logger, crashReporter } from "@/store/middleware/logger";
-import history from "@/store/history";
-import rootReducer from "@/reducers";
-import rootSaga from "@/sagas";
-import isDevelopment from "@/env";
+import monitorReducersEnhancer from "@/state/store/enhancers/monitorReducerEnhancer";
+import { logger, crashReporter } from "@/state/store/middleware/logger";
+import history from "@/state/store/history";
+import rootReducer from "@/state/reducers";
+import rootSaga from "@/state/sagas";
+import isDevelopment, { isReduxLogger } from "@/env";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,7 +20,7 @@ export default function configureStore(preloadedState) {
         sagaMiddleware,
     ];
 
-    if (isDevelopment) {
+    if (isReduxLogger) {
         middlewares.push(logger, crashReporter);
     }
 

@@ -13,8 +13,10 @@ const LiveReloadPlugin = require("webpack-livereload-plugin");
  |
  */
 
+const isProduction = mix.inProduction();
+
 mix.webpackConfig((webpack) => {
-    console.log(webpack);
+    console.log(isProduction && webpack);
     return {
         plugins: [new LiveReloadPlugin()],
         resolve: {
@@ -44,7 +46,7 @@ mix.webpackConfig((webpack) => {
     };
 });
 
-if (mix.inProduction()) {
+if (isProduction) {
     mix.version();
     mix.options({
         terser: {
@@ -55,15 +57,32 @@ if (mix.inProduction()) {
             },
             extractComments: false,
         },
+        cssNano: {
+            discardComments: {
+                removeAll: true,
+            },
+        },
     });
 } else {
     mix.sourceMaps(true, "cheap-module-source-map");
     mix.disableNotifications();
 }
 
+mix.options({
+    fileLoaderDirs: {
+        images: "assets/images",
+        fonts: "assets/fonts",
+    },
+});
+
 mix.react("resources/assets/js/app.js", "public/assets/js").sass(
     "resources/assets/sass/app.scss",
-    "public/assets/css"
+    "public/assets/css",
+    {
+        sassOptions: {
+            outputStyle: isProduction ? "compressed" : "expanded",
+        },
+    }
 );
 
 mix.extract();
