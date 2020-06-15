@@ -4,11 +4,13 @@
     right: 0;
     bottom: 0;
     left: 0;
+
     z-index: 9999;
 
     display: block;
 
     background: rgba(0, 0, 0, 0.75);
+
     .icon-loading {
         position: absolute;
         top: 50%;
@@ -26,9 +28,11 @@
             0% {
                 transform: translate(-50%, -50%) rotate(0deg);
             }
+
             50% {
                 transform: translate(-50%, -50%) rotate(180deg);
             }
+
             100% {
                 transform: translate(-50%, -50%) rotate(360deg);
             }
