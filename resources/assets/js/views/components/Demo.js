@@ -14,7 +14,7 @@ class Demo extends React.Component {
         return (
             <div className="container">
                 <h1 className="row justify-content-center">
-                    {i18n.t("Welcome to React")}
+                    {i18n.t("welcome")}
                 </h1>
                 <div className="row justify-content-center">
                     <div className="col-md-8">

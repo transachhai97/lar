@@ -1,4 +1,4 @@
 {
-    "Welcome to React": "Chào mừng bạn đến với React và React-i18next",
-    "No internet": "Không có kết nối mạng"
+    "welcome": "Chào mừng",
+    "noInternet": "Không có kết nối mạng"
 }
