@@ -5,6 +5,15 @@
     <link rel="icon" href="{{asset('favicon.ico')}}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Laravel</title>
+
+    <script>
+      window.Laravel = {!! json_encode([
+        'csrfToken' => csrf_token(),
+        'baseUrl' => url('/'),
+        'routes' => collect(\Route::getRoutes())->mapWithKeys(function ($route) { return [$route->getName() => $route->uri()]; })
+    ]) !!};
+    </script>
+
     <link href="{{asset(mix('assets/css/app.css'))}}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
