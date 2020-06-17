@@ -4,8 +4,9 @@ import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
 import { withTranslation } from "react-i18next";
 
-import i18n from "@/locale/i18n";
 import GlobalLoading from "@/views/components/GlobalLoading";
+import Toastify from "@/views/components/Toastify";
+import Demo from "@/views/components/Demo";
 
 class App extends React.Component {
     render() {
@@ -13,23 +14,8 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <GlobalLoading />
-                <div className="container">
-                    <h1 className="row justify-content-center">
-                        {i18n.t("Welcome to React")}
-                    </h1>
-                    <div className="row justify-content-center">
-                        <div className="col-md-8">
-                            <div className="card">
-                                <div className="card-header">
-                                    Example Component
-                                </div>
-                                <div className="card-body">
-                                    I&apos;m an example component!
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Toastify />
+                <Demo />
             </React.Fragment>
         );
     }

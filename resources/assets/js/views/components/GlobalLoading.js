@@ -18,13 +18,17 @@ class GlobalLoading extends React.Component {
     }
 }
 
-GlobalLoading.defaultProps = {
+const defaultProps = {
     noLoading: true,
 };
 
-GlobalLoading.propTypes = {
+const propTypes = {
     noLoading: PropTypes.bool,
 };
+
+GlobalLoading.defaultProps = defaultProps;
+
+GlobalLoading.propTypes = propTypes;
 
 // eslint-disable-next-line no-unused-vars
 const mapStateToProps = (state, ownProps) => {
