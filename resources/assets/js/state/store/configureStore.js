@@ -1,15 +1,14 @@
-import { applyMiddleware, compose, createStore } from "redux";
-import thunkMiddleware from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { routerMiddleware } from "connected-react-router";
-import createSagaMiddleware from "redux-saga";
-
-import monitorReducersEnhancer from "@/state/store/enhancers/monitorReducerEnhancer";
-import { logger, crashReporter } from "@/state/store/middleware/logger";
-import history from "@/state/store/history";
+import isDevelopment, { isReduxLogger } from "@/env";
 import rootReducer from "@/state/reducers";
 import rootSaga from "@/state/sagas";
-import isDevelopment, { isReduxLogger } from "@/env";
+import monitorReducersEnhancer from "@/state/store/enhancers/monitorReducerEnhancer";
+import history from "@/state/store/history";
+import { logger, crashReporter } from "@/state/store/middleware/logger";
+import { routerMiddleware } from "connected-react-router";
+import { applyMiddleware, compose, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import createSagaMiddleware from "redux-saga";
+import thunkMiddleware from "redux-thunk";
 
 const sagaMiddleware = createSagaMiddleware();
 
