@@ -1,4 +1,4 @@
-import { takeLatest, select, take } from "redux-saga/effects";
+import { select, take, takeLatest } from "redux-saga/effects";
 
 function* watchAndLog() {
     while (true) {

@@ -4,8 +4,7 @@ import Toastify from "@/views/components/Toastify";
 import React from "react";
 import { withTranslation } from "react-i18next";
 import { connect } from "react-redux";
-// eslint-disable-next-line no-unused-vars
-import { bindActionCreators, compose } from "redux";
+import { compose } from "redux";
 
 class App extends React.Component {
     render() {

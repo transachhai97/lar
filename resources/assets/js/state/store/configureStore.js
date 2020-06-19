@@ -3,7 +3,7 @@ import rootReducer from "@/state/reducers";
 import rootSaga from "@/state/sagas";
 import monitorReducersEnhancer from "@/state/store/enhancers/monitorReducerEnhancer";
 import history from "@/state/store/history";
-import { logger, crashReporter } from "@/state/store/middleware/logger";
+import { crashReporter, logger } from "@/state/store/middleware/logger";
 import { routerMiddleware } from "connected-react-router";
 import { applyMiddleware, compose, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
