@@ -1,4 +1,4 @@
 {
-    "Welcome to React": "Welcome to React and react-i18next",
-    "No internet": "No internet"
+    "welcome": "Welcome",
+    "noInternet": "No internet"
 }

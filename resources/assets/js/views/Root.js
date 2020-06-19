@@ -1,13 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { I18nextProvider } from "react-i18next";
-
-import App from "@/views/components/App";
-import configureStore from "@/state/store/configureStore";
 import i18n from "@/locale/i18n";
+import configureStore from "@/state/store/configureStore";
+import App from "@/views/components/App";
 import MultipleLanguage from "@/views/components/MultipleLanguage";
 import NetworkDisconnect from "@/views/components/NetworkDisconnect";
+import React from "react";
+import ReactDOM from "react-dom";
+import { I18nextProvider } from "react-i18next";
+import { Provider } from "react-redux";
 
 const store = configureStore();
 

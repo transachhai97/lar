@@ -1,10 +1,8 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-
 import isDevelopment from "@/env";
-
 import translationEN from "@/locale/en/translation";
 import translationVI from "@/locale/vi/translation";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 const resources = {
     en: {

@@ -1,6 +1,5 @@
-import React from "react";
-
 import i18n from "@/locale/i18n";
+import React from "react";
 
 class MultipleLanguage extends React.Component {
     constructor(props) {

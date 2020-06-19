@@ -1,12 +1,11 @@
+import { toastError, toastSuccess } from "@/helpers/toast";
+import i18n from "@/locale/i18n";
+import uiAction from "@/state/ducks/ui/action";
+import PropTypes from "prop-types";
 import React from "react";
+import { withTranslation } from "react-i18next";
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from "redux";
-import { withTranslation } from "react-i18next";
-import PropTypes from "prop-types";
-
-import i18n from "@/locale/i18n";
-import { toastError, toastSuccess } from "@/helpers/toast";
-import uiAction from "@/state/ducks/ui/action";
 
 class Demo extends React.Component {
     render() {
@@ -14,7 +13,7 @@ class Demo extends React.Component {
         return (
             <div className="container">
                 <h1 className="row justify-content-center">
-                    {i18n.t("Welcome to React")}
+                    {i18n.t("welcome")}
                 </h1>
                 <div className="row justify-content-center">
                     <div className="col-md-8">
