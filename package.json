@@ -9,7 +9,7 @@
         "prod": "yarn clean && yarn production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "format": "prettier --list-different --write \"resources/assets/**/*.{js,jsx,css,scss}\"",
-        "eslint": "eslint \"resources/assets/**/*.{js,jsx}\" --fix --quiet",
+        "eslint": "eslint \"resources/assets/**/*.{js,jsx}\" --fix",
         "stylelint": "stylelint \"resources/assets/**/*.{css,scss}\" --fix",
         "clean": "yarn format && yarn eslint && yarn stylelint"
     },
